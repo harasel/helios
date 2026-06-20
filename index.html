@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AETHER — Engineering the Quantum Horizon</title>
+<meta name="description" content="AETHER builds the computational substrate of the next century — quantum-coherent infrastructure for a post-classical era." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- BACKGROUND LAYERS -->
+<div class="bg-layer bg-gradient"></div>
+<div class="bg-layer bg-grid"></div>
+<div class="bg-layer bg-orbits">
+  <svg viewBox="0 0 1600 1600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="orbFade" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#60A5FA" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="800" cy="800" r="300" fill="none" stroke="url(#orbFade)" stroke-width="1"/>
+    <circle cx="800" cy="800" r="500" fill="none" stroke="url(#orbFade)" stroke-width="1"/>
+    <circle cx="800" cy="800" r="720" fill="none" stroke="url(#orbFade)" stroke-width="1"/>
+  </svg>
+</div>
+<canvas id="particles" class="bg-layer"></canvas>
+<div class="bg-layer bg-ambient"></div>
+<div class="bg-layer bg-cursor" id="cursorGlow"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="brand" aria-label="Aether home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="14" fill="none" stroke="url(#bg1)" stroke-width="1.4"/>
+          <circle cx="16" cy="16" r="6" fill="url(#bg2)"/>
+          <defs>
+            <linearGradient id="bg1" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#60A5FA"/><stop offset="100%" stop-color="#4F46E5"/>
+            </linearGradient>
+            <radialGradient id="bg2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#4F46E5"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </span>
+      <span class="brand-name">AETHER</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#technology">Technology</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#cta" class="btn btn-ghost btn-sm">Request access</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<main>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <span class="eyebrow"><span class="dot"></span>Engineering the post-classical era</span>
+      <h1 class="headline">
+        The substrate<br/>of the next<br/><span class="grad-text">century.</span>
+      </h1>
+      <p class="lede">
+        AETHER builds quantum-coherent infrastructure — a unified computational fabric for research labs, sovereign systems, and frontier industries operating beyond classical limits.
+      </p>
+      <div class="cta-row">
+        <a href="#cta" class="btn btn-primary" data-magnetic>
+          <span>Request access</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#technology" class="btn btn-secondary" data-magnetic>
+          <span>Explore the system</span>
+        </a>
+      </div>
+      <div class="trust-row">
+        <span>Trusted in advanced research at</span>
+        <div class="trust-logos">
+          <span>CERN-α</span><span>MITRE</span><span>RIKEN</span><span>DARPA-X</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="quantum-core" id="quantumCore" aria-hidden="true">
+        <div class="core-halo"></div>
+        <svg class="core-svg" viewBox="0 0 600 600">
+          <defs>
+            <radialGradient id="orbCore" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+              <stop offset="35%" stop-color="#60A5FA" stop-opacity="0.55"/>
+              <stop offset="70%" stop-color="#4F46E5" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.9"/>
+              <stop offset="50%" stop-color="#06B6D4" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.9"/>
+            </linearGradient>
+            <linearGradient id="ringGrad2" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#4F46E5" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Outer rotating rings -->
+          <g class="ring ring-1">
+            <ellipse cx="300" cy="300" rx="270" ry="90" fill="none" stroke="url(#ringGrad)" stroke-width="1.2"/>
+          </g>
+          <g class="ring ring-2">
+            <ellipse cx="300" cy="300" rx="260" ry="100" fill="none" stroke="url(#ringGrad2)" stroke-width="1"/>
+          </g>
+          <g class="ring ring-3">
+            <ellipse cx="300" cy="300" rx="245" ry="80" fill="none" stroke="url(#ringGrad)" stroke-width="0.8"/>
+          </g>
+
+          <!-- Inner ticks -->
+          <g class="ticks">
+            <circle cx="300" cy="300" r="190" fill="none" stroke="#60A5FA" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="2 8"/>
+            <circle cx="300" cy="300" r="150" fill="none" stroke="#60A5FA" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="1 6"/>
+          </g>
+
+          <!-- Core orb -->
+          <circle cx="300" cy="300" r="120" fill="url(#orbCore)"/>
+          <circle cx="300" cy="300" r="60" fill="#ffffff" fill-opacity="0.08"/>
+          <circle cx="300" cy="300" r="24" fill="#ffffff" fill-opacity="0.9"/>
+
+          <!-- Orbiting nodes -->
+          <g class="orbit-nodes orbit-a">
+            <circle r="4" cx="570" cy="300" fill="#60A5FA"/>
+          </g>
+          <g class="orbit-nodes orbit-b">
+            <circle r="3" cx="40" cy="300" fill="#06B6D4"/>
+          </g>
+          <g class="orbit-nodes orbit-c">
+            <circle r="3" cx="300" cy="55" fill="#ffffff"/>
+          </g>
+        </svg>
+        <div class="core-readout">
+          <div><span>COHERENCE</span><b>99.9982%</b></div>
+          <div><span>QUBITS</span><b>4,096</b></div>
+          <div><span>LATENCY</span><b>0.41 ns</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- TECHNOLOGY -->
+<section class="section" id="technology">
+  <div class="container">
+    <header class="section-head reveal">
+      <span class="eyebrow"><span class="dot"></span>The architecture</span>
+      <h2>Three systems. One coherent fabric.</h2>
+      <p>Every layer is engineered in-house — from the cryogenic silicon to the orchestration plane — so that performance compounds across the stack.</p>
+    </header>
+    <div class="cards">
+      <article class="card reveal" data-tilt>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4"/><circle cx="24" cy="24" r="3" fill="currentColor"/></svg>
+        </div>
+        <h3>Quantum Core</h3>
+        <p>A 4,096-qubit superconducting lattice operating at 8 millikelvin with self-correcting topological encoding.</p>
+        <ul class="card-meta"><li>Coherence · 1.2 ms</li><li>Gate fidelity · 99.99%</li></ul>
+      </article>
+      <article class="card reveal" data-tilt>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><path d="M8 32 L20 16 L28 26 L40 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="40" cy="12" r="2.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Photonic Fabric</h3>
+        <p>Silicon-photonic interconnect delivering sub-nanosecond entanglement distribution across distributed compute nodes.</p>
+        <ul class="card-meta"><li>Bandwidth · 1.6 Pb/s</li><li>Loss · 0.04 dB/km</li></ul>
+      </article>
+      <article class="card reveal" data-tilt>
+        <div class="card-icon">
+          <svg viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <h3>Orchestration Plane</h3>
+        <p>A declarative runtime that compiles classical workloads into hybrid quantum-classical execution graphs in real time.</p>
+        <ul class="card-meta"><li>SLA · 99.999%</li><li>Regions · 14 sovereign</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="reveal">
+      <span class="eyebrow"><span class="dot"></span>About AETHER</span>
+      <h2 class="about-headline">
+        We are building the infrastructure that the next century will be built on.
+      </h2>
+    </div>
+    <div class="about-body reveal">
+      <p>Founded by physicists, compiler engineers, and aerospace architects, AETHER operates at the intersection of fundamental research and industrial-scale deployment. Our laboratories in Zürich, Pasadena, and Tsukuba develop the materials, control systems, and orchestration software required to make quantum coherence a continuous, available resource.</p>
+      <p>We do not believe the future arrives in announcements. It arrives in millimeters of cabling, in nanoseconds of timing, in decades of patient work. AETHER is that work, made visible.</p>
+      <div class="stats">
+        <div><b>2030</b><span>Operational horizon</span></div>
+        <div><b>14</b><span>Sovereign regions</span></div>
+        <div><b>312</b><span>Researchers worldwide</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta-section" id="cta">
+  <div class="container">
+    <div class="cta-card reveal">
+      <div class="cta-border"></div>
+      <div class="cta-sweep"></div>
+      <div class="cta-inner">
+        <span class="eyebrow"><span class="dot"></span>Limited 2030 cohort</span>
+        <h2>Operate beyond the classical limit.</h2>
+        <p>AETHER access is granted to a small number of research institutions and frontier industrial partners each cycle. Request an introduction.</p>
+        <div class="cta-row center">
+          <a href="#" class="btn btn-primary" data-magnetic><span>Request access</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="btn btn-secondary" data-magnetic><span>Read the whitepaper</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="container footer-inner">
+    <div class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="#60A5FA" stroke-width="1.4"/><circle cx="16" cy="16" r="6" fill="#4F46E5"/></svg>
+      </span>
+      <span class="brand-name">AETHER</span>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Contact</a>
+    </nav>
+    <p class="copy">© 2030 Aether Systems AG · Zürich · Pasadena · Tsukuba</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
